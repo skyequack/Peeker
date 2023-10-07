@@ -12,4 +12,18 @@ The bot is low profile with a foladable camera mount with 3 degrees of freedom. 
 The controller is custom made and hosts a Raspberry Pi 0 w and has an LCD display which can output the video feed from the robot. 
 
 ## Electronics:
-The control unit decided for this bot is the Raspeberry Pi 4 due it its video processesing capabilites, as well as built in support for wireless communication. The GPIO pins on the board are sufficient to connect all required parts without the need for expansion boards. The driver motors proposed are 12V 500RPM DC motors with a threaded shaft for ease of coupling. The motor driver board selected is the Pololu MAX14870 as it has a very small form factor is holds a lot of advantages such as
+
+### Control:
+The control unit decided for this project is the Raspeberry Pi 4 due it its video processing capabilites, as well as built in support for wireless communication. The GPIO pins on the board are sufficient to connect all required parts without the need for expansion boards. 
+
+### Drive:
+The driver motors proposed are 12V 500RPM DC motors, with a max load current being 300 mA. The shaft is threaded for ease of coupling. The motor driver board selected is the Pololu TB6612FNG as it has a very small form factor and also holds a lot of advantages such as reverse polarity protection. The rated continuous output current is 1A which makes it more than sufficent for the selected DC motors. The Pololu TB6612FNG features two channels hence only one board is required to drive both the DC motors.
+
+### Camera Mount:
+The camera mount is similar to a robotic arm with a VRR configuration. This provides the camera (end effector) with three degrees of freedom. The camera can move laterally up and down, and has pitch and yaw. Each joint is actuated by a MG995 Metal Gear Servo Motor as it can provide stall torque of 11 KGcm and 6.6v which is more than the max required stall torque of 8 KGcm. The camera module used is AR1820HS due to its high resolution (18MP). The camera mount also doubles as a flipping mechanism by actuating the first R joint. The wireless antenna is mounted at 
+
+### Sensors
+The bot features a harmful gas sensor 'MQ-135' suitable for detecting NH3, NOx, alcohol, Benzene, smoke, CO2, etc. A microphone module relays audio data to the user. An inertial measurement unit IMU 6050 is used to sense orientational and positional data.
+
+### Controller
+The controller hosts a Raspberry Pi 0 w which receives all the data from the Raspberry Pi 4. Push buttons are used for user input and an LCD screen connected to the RPi 0w is used for displaying visual data, and a speaker module outputs audio data.
